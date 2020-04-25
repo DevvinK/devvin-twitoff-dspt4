@@ -3,7 +3,7 @@
 import requests
 import json
 import os
-from dotenv inport load_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
