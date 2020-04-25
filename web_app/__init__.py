@@ -13,10 +13,11 @@ from web_app.routes.book_routes import book_routes
 # using absolute filepath on Mac (recommended)
 DATABASE_URI=r"sqlite:///C:\Users\devvi\devvin-twitoff-dspt4\twitoff_development.py"
 # using absolute filepath on Windows (recommended) h/t: https://stackoverflow.com/a/19262231/670433
-
+SECRET_KEY = "supper secret"
 
 def create_app():
    app = Flask(__name__)
+   app.config["SECRET_KEY"] = SECRET_KEY # enable flash messaging via sessions
 
    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
