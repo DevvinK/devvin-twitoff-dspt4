@@ -20,6 +20,8 @@ print(type(api))
 
 if __name__ == "__main__":
       
+   # screen_name = input("Please choose a screen_name")
+
    print("-------------")
    print("User")
    user = api.get_user("elonmusk")
@@ -35,13 +37,13 @@ if __name__ == "__main__":
    #    print("--")
    #    print(status.text)
 
-   statuses = api.user_timeline("elonmusk", tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
+   statuses = api.user_timeline(r"elonmusk", tweet_mode="extended", count=150, exclude_replies=True, include_rts=False)
    for status in statuses:
       print("--")
       print(status.full_text)
 
    status = statuses[0]
-   print(type(status))
+   print(type(status)) #> <class 'tweepy.models.Status'>
 
    print(status.id)
    print(status.full_text)

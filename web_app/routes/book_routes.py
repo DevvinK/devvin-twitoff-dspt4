@@ -42,6 +42,6 @@ def create_book():
     # return jsonify({
     #     "message": "BOOK CREATED OK",
     #     "book": dict(request.form)
-    # })
+    # })x
     flash(f"Book '{new_book.title}' created successfully!", "light")
     return redirect("/books")
