@@ -18,7 +18,7 @@ class User(db.Model):
     name = db.Column(db.String)
     location = db.Column(db.String)
     followers_count = db.Column(db.Integer)
-    #latest_tweet_id = db.Column(db.BigInteger)
+    # latest_tweet_id = db.Column(db.BigInteger)
 
 class Tweet(db.Model):
     id = db.Column(db.BigInteger, primary_key=True)

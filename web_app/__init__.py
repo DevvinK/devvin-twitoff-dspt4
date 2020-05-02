@@ -6,6 +6,7 @@ from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.book_routes import book_routes
 from web_app.routes.twitter_routes import twitter_routes
+from web_app.routes.admin_routes import admin_routes
 
 # DATABASE_URI = "sqlite:///web_app_99.db" # using relative filepath
 # DATABASE_URI = "sqlite:////Users\devvi\devvin-twitoff-dspt4\twitoff_development.py" 
@@ -17,7 +18,6 @@ SECRET_KEY = "supper secret"
 def create_app():
    app = Flask(__name__)
    app.config["SECRET_KEY"] = SECRET_KEY # enable flash messaging via sessions
-
    app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
    db.init_app(app)
@@ -26,6 +26,8 @@ def create_app():
    app.register_blueprint(home_routes)
    app.register_blueprint(book_routes)
    app.register_blueprint(twitter_routes)
+   app.register_blueprint(admin_routes)
+
    return app
 
 if __name__ == "__main__":

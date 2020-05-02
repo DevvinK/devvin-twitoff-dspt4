@@ -42,7 +42,7 @@ def fetch_user_data(screen_name):
    #
    tweet_texts = [status.full_text for status in statuses]
    embeddings = list(basilica_connection.embed_sentences(tweet_texts, model="twitter"))
-   print("Embeddings ", len(embeddings))
+   print("Embeddings ", embeddings)
    #
    # Store tweets in database (w/ embeddings)
    #
