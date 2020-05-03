@@ -11,14 +11,14 @@ API_KEY = "abc123" # TODO: set as secret env var
 # Get /admin/db/reset?api_key=abc123
 @admin_routes.route("/admin/db/reset")
 def reset_db():
-    print("URL PARMS", dict(request.args))
+   print("URL PARMS", dict(request.args))
 
-    if "api_key" in dict(request.args) and request.args["api_key"] == API_KEY:
+   if "api_key" in dict(request.args) and request.args["api_key"] == API_KEY:
       print(type(db))
       db.drop_all()
       db.create_all()
       return jsonify({"message": "DB RESET OK"})
-    else:
+   else:
       print("Permission Denied")
       flash("OOPS Permission Denied", "danger")
       return redirect("/")
